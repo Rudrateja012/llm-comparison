@@ -1,0 +1,4 @@
+Model,Response,Prompt,Timestamp
+chatgpt, OPENAI_API_KEY not found,rudra,2026-01-03 15:46:46
+gemini, GEMINI_API_KEY not found,rudra,2026-01-03 15:46:46
+llama, HF_API_KEY not found,rudra,2026-01-03 15:46:46

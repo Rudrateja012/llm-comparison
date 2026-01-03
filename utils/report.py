@@ -1,15 +1,19 @@
-import pandas as pd
 import os
+import pandas as pd
 from datetime import datetime
 
-def generate_report(prompt:str,response:dict):
-    os.makedirs("data/completions_reports", exist_ok=True)
+def generate_report(prompt: str, responses: dict):
+    os.makedirs("data/comparision_reports", exist_ok=True)
 
-    row = []
-    for model,output in response.items():
-        row.append({
-            "model": model,
-            "prompt": prompt,
-            "Response": output,
+    rows = []
+    for model_name, response in responses.items():
+        rows.append({
+            "Model": model_name,
+            "Response": response,
+            "Prompt": prompt,
             "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        })  
+        })
+    df = pd.DataFrame(rows)
+    df.to_csv("data/comparision_reports/report.csv", index=False)
+    
+    return "data/comparision_reports/report.csv"
