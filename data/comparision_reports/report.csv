@@ -1,4 +1,4 @@
 Model,Response,Prompt,Timestamp
-chatgpt, OPENAI_API_KEY not found,rudra,2026-01-03 15:46:46
-gemini, GEMINI_API_KEY not found,rudra,2026-01-03 15:46:46
-llama, HF_API_KEY not found,rudra,2026-01-03 15:46:46
+ChatGPT,"ChatGPT Error: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",hello,2026-01-05 10:15:16
+Gemini,"Gemini Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",hello,2026-01-05 10:15:16
+LLaMA,LLaMA Error: The api_key client option must be set either by passing api_key to the client or by setting the GROQ_API_KEY environment variable,hello,2026-01-05 10:15:16
