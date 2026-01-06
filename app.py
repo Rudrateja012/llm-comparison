@@ -26,100 +26,114 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    /* Global Font & Background */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    /* Premium Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400;600&display=swap');
     
     html, body, [class*="css"] {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+        background-color: #050505 !important; /* Pure Black */
     }
 
     .stApp {
-        background-color: #0f172a; /* Slate 900 */
-        color: #f8fafc;
+        background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
     }
 
-    /* Headers */
-    h1, h2, h3 {
-        color: #f8fafc !important;
-        font-weight: 700;
-    }
-    
+    /* --- Luxury Header Style --- */
     .main-header {
-        font-size: 2.5rem;
-        background: -webkit-linear-gradient(eee, #38bdf8);
+        font-family: 'Bodoni Moda', serif !important;
+        font-size: 4rem !important;
+        font-weight: 400 !important;
+        font-style: italic;
+        letter-spacing: -2px !important;
+        background: linear-gradient(to bottom, #ffffff 30%, #a1a1a1 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-bottom: 0;
+        text-align: center;
+        padding-top: 2rem;
     }
 
     .sub-header {
-        font-size: 1.1rem;
-        color: #94a3b8;
-        margin-bottom: 2rem;
-    }
-
-    /* Input Areas */
-    .stTextArea textarea {
-        background-color: #1e293b;
-        border: 1px solid #334155;
-        color: #e2e8f0;
-        border-radius: 8px;
-    }
-    .stTextArea textarea:focus {
-        border-color: #38bdf8;
-        box-shadow: 0 0 0 1px #38bdf8;
-    }
-    
-    /* Selectbox */
-    div[data-baseweb="select"] > div {
-        background-color: #1e293b;
-        border: 1px solid #334155;
-        border-radius: 8px;
-        color: white;
-    }
-
-    /* Custom Button Style */
-    div.stButton > button {
-        background: #38bdf8;
-        color: #0f172a;
-        border: none;
-        padding: 0.75rem 2rem;
-        font-weight: 600;
-        border-radius: 8px;
-        width: 100%;
-        transition: all 0.2s;
-    }
-    div.stButton > button:hover {
-        background: #0ea5e9;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
-    }
-
-    /* Result Cards */
-    .model-card {
-        background-color: #1e293b;
-        border: 1px solid #334155;
-        border-radius: 12px;
-        padding: 20px;
-        height: 100%;
-    }
-    .model-name {
-        font-weight: 700;
-        color: #38bdf8;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 0.9rem;
-        margin-bottom: 10px;
-        border-bottom: 1px solid #334155;
-        padding-bottom: 8px;
+        letter-spacing: 8px !important;
+        color: #d4af37 !important; /* Classic Gold */
+        text-align: center;
+        font-size: 0.8rem !important;
+        margin-bottom: 4rem !important;
     }
 
-    /* Metrics Container */
-    div[data-testid="metric-container"] {
-        background-color: #1e293b;
-        border: 1px solid #334155;
-        padding: 10px 20px;
-        border-radius: 8px;
+    /* --- Floating Glass Inputs --- */
+    .stTextArea textarea {
+        background: rgba(255, 255, 255, 0.02) !important;
+        border: 0.5px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 0px !important; /* Sharp edges = Luxury */
+        color: #ffffff !important;
+        padding: 20px !important;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
+
+    .stTextArea textarea:focus {
+        border-color: #d4af37 !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    /* --- The "Signature" Button --- */
+    div.stButton > button {
+        background: transparent !important;
+        color: #d4af37 !important;
+        border: 1px solid #d4af37 !important;
+        padding: 1rem 3rem !important;
+        border-radius: 0px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 4px !important;
+        font-weight: 400 !important;
+        transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1) !important;
+    }
+
+    div.stButton > button:hover {
+        background: #d4af37 !important;
+        color: #000 !important;
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    }
+
+    /* --- Card Aesthetics (The "Boutique" Look) --- */
+    .model-card {
+        background: rgba(255, 255, 255, 0.01);
+        border-top: 1px solid rgba(212, 175, 55, 0.3); /* Gold accent top line */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 40px !important;
+        text-align: center;
+    }
+
+    .model-name {
+        font-family: 'Bodoni Moda', serif !important;
+        font-size: 1.5rem !important;
+        font-style: italic;
+        color: #ffffff !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* --- Metric Refinement --- */
+    div[data-testid="metric-container"] {
+        background: transparent !important;
+        border: none !important;
+        border-left: 1px solid rgba(212, 175, 55, 0.5) !important;
+        padding-left: 20px !important;
+    }
+
+    label[data-testid="stMetricLabel"] {
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        font-size: 0.7rem !important;
+        color: #888 !important;
+    }
+
+    /* Scrollbar for luxury feel */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: #d4af37; }
 </style>
 """, unsafe_allow_html=True)
 
