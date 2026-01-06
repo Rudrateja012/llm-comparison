@@ -13,8 +13,8 @@ try:
     from utils.parallel import run_parallel
     from utils.rate_limiter import check_limit
     from utils.report import generate_report
-except ImportError:
-    st.error("⚠️ Backend modules not found. Ensure 'auth', 'utils' folders exist.")
+except Exception as e:
+    st.error(e)
     st.stop()
 
 st.set_page_config(
