@@ -3,9 +3,7 @@ import pandas as pd
 import time
 import os
 
-from dotenv import load_dotenv
 
-load_dotenv()
 
 try:
     from auth import login
